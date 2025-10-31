@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RazorPay</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <!-- <link rel="stylesheet" href="main.css" /> -->
+  <link rel="stylesheet" href="./output.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    
+    .companiesList {
+
+      animation: 10s infinite linear moveCompany;
+    }
+
+    @keyframes moveCompany {
+
+      0% {
+        top: 0%;
+      }
+
+      100% {
+        top: -50%;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!--navbar-->
+  <nav class="bg-deepBlue w-full  lg:block hidden  ">
+    <div class="relative lg:w-[1080px] w-full  mx-auto flex items-center lg:justify-between  justify-center">
+      <a href="/" class="cursor-pointer py-7 pr-7">
+        <img src="./image/razorpay logo.png" alt="" width="145px" height="4px" /></a>
+
+
+      <ul class="space-x-6 hidden lg:flex">
+        <li
+          class="text-white font-bold py-7 hover:text-yellow-400 cursor-pointer transition-all duration-200 relative group">
+          <a href="#">Payments</a>
+
+          <div class="absolute bottom-0 w-full h-1 bg-blue-600 hidden group-hover:block transition-all duration-200 ">
+          </div>
+        </li>
+
+        <li
+          class="text-white font-bold py-7 hover:text-yellow-400 cursor-pointer transition-all duration-200 relative group">
+          <a href="#">Banking</a>
+
+          <div class="absolute bottom-0 w-full h-1 bg-blue-600 hidden group-hover:block transition-all duration-200">
+          </div>
+        </li>
+
+        <li
+          class="text-white font-bold py-7 hover:text-yellow-400 cursor-pointer transition-all duration-200 relative group">
+          <a href="#">CorporateCard</a>
+
+          <div class="absolute bottom-0 w-full h-1 bg-blue-600 hidden group-hover:block transition-all duration-200">
+          </div>
+        </li>
+
+        <li
+          class="text-white font-bold py-7 hover:text-yellow-400 cursor-pointer transition-all duration-200 relative ">
+          <a href="#">Payroll</a>
+
+          <div class="absolute bottom-0 w-full h-1 bg-blue-600 hidden group-hover:block transition-all duration-200">
+          </div>
+        </li>
+
+        <li
+          class="text-white font-bold py-7 hover:text-yellow-400 cursor-pointer transition-all duration-200 relative group ">
+          <a href="#">Resourses</a>
+
+          <div class="absolute bottom-0 w-full h-1 bg-blue-600 hidden group-hover:block transition-all duration-200 ">
+          </div>
+        </li>
+
+        <li
+          class="text-white font-bold py-7 hover:text-yellow-400 cursor-pointer transition-all duration-200 relative group  ">
+          <a href="#">Support</a>
+
+          <div class="absolute bottom-0 w-full h-1 bg-blue-600 hidden group-hover:block transition-all duration-200">
+          </div>
+        </li>
+
+        <li
+          class="text-white font-bold py-7 hover:text-yellow-400 cursor-pointer transition-all duration-200 relative group hidden lg:block">
+          <a href="#">Pricing</a>
+
+          <div class="absolute bottom-0 w-full h-1 bg-blue-600 hidden group-hover:block transition-all duration-200  ">
+          </div>
+        </li>
+      </ul>
+
+
+      <div class="flex">
+        <!-- <img
+              src="./image/indian logo.png"
+              alt=""
+              width="30px"
+              height="10px" class=" hidden lg:block"
+            /> -->
+        <button class="px-5 py-3 text-white border-
+              + border-rounded-sm text-sm font-bold">
+          Login
+        </button>
+
+        <button class="py-3 px-5 rounded-sm text-sm font-bold bg-white text-black  hover:text-yellow-500 ">
+          SignUp
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="bg-black w-full lg:hidden block">
+    <div class="relative  w-full lg:w-[1080px] mx-auto flex items-center justify-between px-4 py-3">
+
+      <!-- Logo -->
+      <a href="/" class="cursor-pointer">
+        <img src="./image/razorpay logo.png" alt="Logo" width="145px" />
+      </a>
+
+      <!-- Hamburger Button (Mobile only) -->
+
+
+
+
+      <!-- Menu -->
+      <ul id="menu" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out 
+      lg:max-h-none lg:flex flex-col lg:flex-row lg:items-center 
+      absolute lg:static top-[60px] left-0 w-full lg:w-auto bg-black lg:bg-transparent 
+      space-y-4 lg:space-y-0 lg:space-x-6 text-center lg:text-left z-50">
+
+        <li><a href="#" class="text-white block py-2 px-4 hover:text-yellow-400">Payments</a></li>
+        <li><a href="#" class="text-white block py-2 px-4 hover:text-yellow-400">Banking</a></li>
+        <li><a href="#" class="text-white block py-2 px-4 hover:text-yellow-400">CorporateCard</a></li>
+        <li><a href="#" class="text-white block py-2 px-4 hover:text-yellow-400">Payroll</a></li>
+        <li><a href="#" class="text-white block py-2 px-4 hover:text-yellow-400">Resources</a></li>
+        <li><a href="#" class="text-white block py-2 px-4 hover:text-yellow-400">Support</a></li>
+        <li><a href="#" class="text-white block py-2 px-4 hover:text-yellow-400">Pricing</a></li>
+
+        <!-- Right side buttons -->
+
+      </ul>
+      <div class="flex">
+        <img src="./image/indian logo.png" alt="" width="30px" height="10px" class=" hidden lg:block" />
+        <button class="px-5 py-3 text-white border-
+              + border-rounded-sm text-sm font-bold">
+          Login
+        </button>
+
+        <button class="py-3 px-5 rounded-sm text-sm font-bold bg-white text-black  hover:text-yellow-500 ">
+          SignUp
+        </button>
+      </div>
+      <button id="menu-btn" class="lg:hidden text-white text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+
+  <!--first page-->
+
+  <section id="a" class="relative bg-deepBlue w-full lg:h-[600px] h-[900px]" style="">
+    <div class="w-10/12 max-w-[1080px] flex flex-col lg:flex-row justify-between items-center mx-auto">
+      <div class=" space-y-8 py-24  ">
+        <!--left-->
+        <h1 class="font-mono font-bold lg:text-[30px] text-[35px] leading[1.5] text-white  ">
+          Power your finance,<br />grow your business
+        </h1>
+        <div class="w-6 h-1 bg-red-600"></div>
+        <p class="font-mono font-bold text-[18px] lg:max-w-[800px] max-w-[550px]   leading-7 opacity-70 text-white">
+          Accept payment from custombers. Automate payouts to vendors &
+          employees Never run out of working capital.
+        </p>
+        <button
+          class="lg:bg-blue-600 bg-blue-500 text-white py-[9px] px-[18px] rounded-md font-mono font-bold hover:bg-blue-300 transition-all duration-200 w-40 h-10 lg:ms-11 ms-20">
+          SignUp Now
+        </button>
+
+      </div>
+
+      <div class="lg:me-0 me-56 ms-40 lg:ms-16 items-center">
+        <!--right-->
+        <img src="./image/razorpaythumbnail.jpg" alt="" class="lg:max-w-[700px] max-w-[450px]  " />
+
+
+
+
+      </div>
+
+
+
+
+
+
+  </section>
+
+  <!--second page-->
+
+
+  <section id="b" class="relative  overflow-hidden bg-white " style="">
+
+    <div class="">
+      <img src="./image/first-page-bg.svg" alt="" class="absolute left-0 right-0 w-[101%]">
+    </div>
+
+
+    <img src="/image/dotted image.png" alt="" width="233" height="166"
+      class="-top[2rem] absolute left-[4rem]  -z-9 opacity-20 pt-48 lg:block hidden" loading="lazy">
+
+    <img src="/image/dotted image.png" alt="" width="233" height="166"
+      class="opacity-20 absolute top-[3rem] right-0 rotate-180 lg:block hidden" loading="lazy">
+
+    <div class="relative w-11/12 max-w-[1080px] lg:mx-64 mx-24 pt-48">
+
+
+      <h2 class="font-mono text-center text-2xl leading-[1.2] font-extrabold pr-64 lg:block hidden ">Accept payments
+        with Razorpay Payment Suite</h2>
+
+      <h2 class="font-sans text-center text-4xl leading-[1.2] font-extrabold mr-32 lg:hidden block text-black  mb-14">
+        Explore Razorpay Payment suit</h2>
+
+      <div class="w-6 h-1 bg-green-600 mx-72 mt-4 mb-6 lg:block hidden  "></div>
+
+      <div class=" bg-white min-h-[520px] lg:w-10/12 w-11/12 flex rounded-md relative p-11  py-12 border lg:right-11 right-16
+  ">
+        <!--left-->
+        <div class="flex flex-col justify-between w-full space-y-8 ">
+          <h3 class="font-mono text-xl text-[28px] leading-10 font-bold max-w[500px] ps-7">SuperCharge your business
+            with the all-powerfull <span class="text-blue-600">Payment Gateway</span> </h3>
+
+          <ul class="space-y-3 ">
+
+
+            <li class="font-mono flex items-center space-x-5">
+              <i class="fa-solid fa-check" style="color: #99e665;"></i>
+
+
+              <span>100+ payment methods</span>
+            </li>
+            <li class="font-mono flex items-center space-x-5">
+              <i class="fa-solid fa-check" style="color: #99e665;"></i>
+              <span> Industry Leading Success Rate</span>
+
+            </li>
+            <li class="font-mono flex items-center space-x-5">
+              <i class="fa-solid fa-check" style="color: #99e665;"></i>
+              <span>Superior Cheakout Experience </span>
+            </li>
+            <li class="font-mono flex items-center space-x-5">
+              <i class="fa-solid fa-check" style="color: #99e665;"></i>
+              <span>Easy to integrate</span>
+            </li>
+            <li class="font-mono flex items-center space-x-5">
+              <i class="fa-solid fa-check" style="color: #99e665;"></i>
+              <span>Instant settlement from day1</span>
+            </li>
+            <li class="font-mono flex items-center space-x-5">
+              <i class="fa-solid fa-check" style="color: #99e665;"></i>
+              <span>In-depth Reporting and Insights</span>
+            </li>
+          </ul>
+          <div class="flex lg:flex-row flex-col lg:items-center items-start space-x-6 lg:space-y-0 space-y-6">
+
+            <!--for btn-->
+            <button
+              class="bg-blue-600  w-full md:w-fit text-white py-[8px] px-[20px] rounded-md font-mono font-bold hover:bg-black transition-all duration-200">Sign
+              up Now
+              <i class="fa-solid fa-arrow-right" class=""></i>
+            </button>
+            <div class="flex items-center cursor-pointer group self-start lg:self-center">
+              <a href=""
+                class="font-mono font-bold text-blue-700 group-hover:text-black transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+        <img src="./image/payment-suite.png" alt=""
+          class="absolute max-w-[550px] right-0 bottom-3 hidden lg:max-w-[550px] md:max-w-[450px] md:block lg:block">
+
+
+      </div>
+
+
+      <div class="w-10/12 -mx-11 grid lg:grid-cols-3 grid-cols-1 gap-4 mt-10 mb-28   ">
+
+        <div class="w-full min-h-[15rem]  relative cursor-pointer border bg-white ">
+
+          <i class="fa-solid fa-arrows-rotate  absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: #1306a7;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8">
+
+            <div>
+              <h3 class="font-mono font-bold text-blue-700 leading-[1.2] text-[1.375rem]">Payments Links</h3>
+              <p class="font-mono text-gray-700 mt-6">Share payment link via an email,SMS,messenger,chatbot<br> etc. and
+                get paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-blue-700 group-hover:text-black transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="w-full min-h-[15rem] relative cursor-pointer border bg-white ">
+
+          <i class="fa-solid fa-arrows-rotate   absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: #1306a7;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8">
+
+            <div>
+              <h3 class="font-mono font-bold text-blue-700 leading-[1.2] text-[1.375rem]">Payments Page</h3>
+              <p class="font-mono text-gray-700 mt-6">Share payment link via an e-mail,SMS,messenger,chatbot etc. and
+                get paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-blue-700 group-hover:text-black transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="w-full min-h-[15rem] relative cursor-pointer border bg-white ">
+
+          <i class="fa-solid fa-arrows-rotate   absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: #1306a7;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8">
+
+            <div>
+              <h3 class="font-mono font-bold text-blue-700 leading-[1.2] text-[1.375rem]">Payments Buttons</h3>
+              <p class="font-mono text-gray-700 mt-6">Share payment link via an e-mail,SMS,messenger,chatbot etc. and
+                get paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-blue-700 group-hover:text-black transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+        <div class="w-full min-h-[15rem] relative cursor-pointer border bg-white ">
+
+          <i class="fa-solid fa-arrows-rotate   absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: #1306a7;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8">
+
+            <div>
+              <h3 class="font-mono font-bold text-blue-700 leading-[1.2] text-[1.375rem]">Subscription</h3>
+              <p class="font-mono text-gray-700 mt-6">Share payment link via an e-mail,SMS,messenger,chatbot etc. and
+                get paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-blue-700 group-hover:text-black transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+        <div class="w-full min-h-[15rem] relative cursor-pointer border bg-white ">
+
+          <i class="fa-solid fa-arrows-rotate   absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: #1306a7;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8">
+
+            <div>
+              <h3 class="font-mono font-bold text-blue-700 leading-[1.2] text-[1.375rem]">Route</h3>
+              <p class="font-mono text-gray-700 mt-6">Share payment link via an e-mail,SMS,messenger,chatbot etc. and
+                get paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-blue-700 group-hover:text-black transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+        <div class="w-full min-h-[15rem] relative cursor-pointer border bg-white ">
+
+          <i class="fa-solid fa-arrows-rotate   absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: #1306a7;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8">
+
+            <div>
+              <h3 class="font-mono font-bold text-blue-700 leading-[1.2] text-[1.375rem]">Smart Collect</h3>
+              <p class="font-mono text-gray-700 mt-6">Share payment link via an e-mail,SMS,messenger,chatbot etc. and
+                get paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-blue-700 group-hover:text-black transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+  </section>
+
+  <section id="c" class="bg-deepBlue bg-no-repeat bg-cover  pt-[6rem] pb-[100px] mt-0 lg:h-[1350px]  w-full  ">
+
+    <div class="w-10/12 max-w-[1080px] lg:mx-auto relative mx-11  ">
+
+      <h2 class="font-mono text-center text-2xl  font-extrabold pr-14 pt-4  text-white">Explore Razorpay Business
+        Banking </h2>
+      <div class="w-6 h-1 bg-green-300 mx-auto mt-2"></div>
+
+      <!--main div-->
+
+
+      <div class="w-10/12 min-h-[520px] flex  relative bottom-12 mt-24 lg:mx-24  ">
+
+        <img src="./image/x-flame-1-12c499a3.png" alt="" loading="lazy"
+          class="absolute -top-[10px] -left-[180px] w-[200px] ">
+
+        <img src="./image/x-flame-1-12c499a3.png" alt=""
+          class="absolute lg:top-[250px] lg:-right-[180px]  w-[250px]  rotate-180">
+
+        <div class=" bg-deepBlue py-12 p-10  lg:w-full  w-11/12  border  rounded-md z-20  
+  ">
+
+          <!--left-->
+          <div class="flex flex-col lg:justify-between    h-full w-full ">
+            <h3 class="font-mono text-xl text-[28px] leading-10 font-bold text-white ">Manage Your Company's finances
+              with <br>
+
+              <img src="./image/razorpay logo.png" alt=""
+                class="lg:mx-30 lg:inline lg:max-w-[500px] lg:h-[32px] lg:w-[168px] text-white mt-2">
+            </h3>
+
+
+            <ul class="space-y-5 text-white mt-4">
+
+
+              <li class="font-mono flex items-center space-x-2">
+                <i class="fa-solid fa-check" style="color: #99e665;"></i>
+                <span> Open a fully digital current account</span>
+              </li>
+              <li class="font-mono flex items-center space-x-5">
+                <i class="fa-solid fa-check" style="color: #99e665;"></i>
+                <span> Automate payables & compliments payments</span>
+
+              </li>
+              <li class="font-mono flex items-center space-x-5">
+                <i class="fa-solid fa-check" style="color: #99e665;"></i>
+                <span>Simply and track spends with Corporate cards </span>
+              </li>
+              <li class="font-mono flex items-center space-x-5">
+                <i class="fa-solid fa-check" style="color: #99e665;"></i>
+                <span>View financial insights at a glance </span>
+              </li>
+
+            </ul>
+
+            <div class="flex flex-row items-center space-x-6 w-full mt-8 ">
+              <!--for btn-->
+
+              <button
+                class="relative bg-white flex items-center justify-start text-black lg:py-[14px] py-[19px] px-[40px] pr-[22px]   lg:px-[18px]  lg:pr-[90px] rounded-md font-mono font-bold hover:bg-red-700 transition-all duration-200 ">Sign
+                up Now
+
+                <div class="w-12 h-[55px] bg-green-500 absolute right-9 skew-x-1 lg:block hidden">
+
+                  <i class="fa-solid fa-arrow-right mt-5 mx-3 -skew-x-12 lg:block hidden"></i>
+
+                </div>
+
+
+              </button>
+
+              <div class="flex items-center cursor-pointer group self-start lg:self-center lg:block hidden">
+                <a href=""
+                  class="font-mono font-bold text-white group-hover:text-black transition-all duration-150">Know more...
+                  <i class="fa-solid fa-bars"></i>
+                </a>
+
+              </div>
+
+
+            </div>
+
+            <div class="flex  cursor-pointer group self-start lg:self-center lg:hidden  py-6 ps-4  ">
+              <a href="" class="font-mono font-bold text-white group-hover:text-black transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i> </a>
+
+            </div>
+
+
+            <img src="./image/payment-suite.png" alt="" class="absolute max-w-[530px] right-0 bottom-1 hidden lg:block">
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+      <div class="grid lg:grid-cols-3 grid-cols-1 w-full gap-4 my-14 ">
+
+        <div class="w-full min-h-[15rem] relative cursor-pointer border  bg-deepBlue ">
+
+          <i class="fa-solid fa-arrows-rotate   absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: blue
+                      ;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8 ">
+
+            <div class="">
+              <h3 class="font-mono font-bold text-white leading-[1.2] text-[1.375rem]">Current Account</h3>
+              <p class="font-mono text-white mt-6">Share payment link via an e-mail,SMS,messenger,chatbot etc. and get
+                paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-yellow-400 group-hover:text-white transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="w-full min-h-[15rem] relative cursor-pointer border bg-deepBlue ">
+
+          <i class="fa-solid fa-arrows-rotate   absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: blue
+                      ;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8 ">
+
+            <div class="">
+              <h3 class="font-mono font-bold text-white leading-[1.2] text-[1.375rem]">Payouts</h3>
+              <p class="font-mono text-white mt-6">Share payment link via an e-mail,SMS,messenger,chatbot etc. and get
+                paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-yellow-400 group-hover:text-white transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="w-full min-h-[15rem] relative cursor-pointer border bg-deepBlue ">
+
+          <i class="fa-solid fa-arrows-rotate   absolute right-3 top-5 w-12 h-12 rounded-full z-[8] transition-all duration-200"
+            style="color: blue
+                      ;"></i>
+
+          <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-6 py-6 pr-8 ">
+
+            <div class="">
+              <h3 class="font-mono font-bold text-white leading-[1.2] text-[1.375rem]">Payroll</h3>
+              <p class="font-mono text-white mt-6">Share payment link via an e-mail,SMS,messenger,chatbot etc. and get
+                paid immediately</p>
+            </div>
+
+            <div class="flex items-center cursor-pointer group">
+              <a href=""
+                class="font-mono font-bold text-yellow-400 group-hover:text-white transition-all duration-150">Know
+                more...
+                <i class="fa-solid fa-bars"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <!--demobox !-->
+
+      <div
+        class="w-full flex lg:flex-row flex-col items-center justify-evenly border border-slate-700 mb-24 gap-y-6 relative rounded-md p-5 bg-white">
+        <p class="font-mono font-bold text-black lg:text-xl">Cheak out the live demo to learn how RazorPayX works.</p>
+        <span class="font-bold text-black"> No sign-up required!</span>
+
+        <button
+          class="relative bg-blue-700 flex items-center justify-start text-white py-[14px] px-[18px]  md:pr-[90px] rounded-md font-mono font-bold hover:bg-green-500 transition-all duration-200 ">cheak
+          the demo
+
+          <div class="w-12 h-[55px] bg-green-500 absolute right-9 skew-x-12 lg:block hidden ">
+
+            <i class="fa-solid fa-arrow-right mt-5 me-4 -skew-x-12"></i>
+
+          </div>
+
+        </button>
+
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <section id="d" class="  relative mt-10">
+
+    <div class="relative w-10/12 max-w-[1080px] mx-auto pt-4">
+
+      <img src="./image/dotted image.png" alt=""
+        class="absolute w-[233px] left-[300px] -top-[6rem] -z-[10] opacity-15 lg:block hidden">
+      <img src="./image/dotted image.png" alt=""
+        class="absolute w-[233px] -right-[3.5rem] -top-[6rem] -z-[10] opacity-15 lg:block hidden">
+
+      <div class="w-full grid lg:grid-cols-3 grid-cols-1 gap-y-10 gap-x-4 relative z-[100] ">
+
+        <div class="relative flex items-center  z-0 ms-16 ">
+          <h2 class="text-blue-950 font-sans font-bold text-4xl leading-[3.357rem] "> New in the
+            <span class="text-blue-700">
+              Razorpay
+            </span><br><span class="text-red-600">Product Suite</span>
+
+          </h2>
+        </div>
+
+        <div
+          class=" p-10 bg-[url(./image/razorpay-instantsattelment.png)] w-full max-h-[300px] cursor-pointer bg-no-repeat hover:scale-105 transition-all duration-200 hover:bg-[url(./image/razorpay-instantsattelment.png)] border bg-white ">
+          <i class="fa-solid fa-circle-xmark" style="color: #74C0FC; "></i>
+          <h3 class="font-sans font-bold text-lg  pt-4">Instant Settlements</h3>
+          <p class="font-bold py-3 text-gray-500 leading-normal"> Simplyfy your recurring, international and team
+            expences with saving on every spend.Save up to 10Lacks to everymonth.</p>
+
+          <div class="flex flex-row items-center cursor-pointer group">
+            <a href=""
+              class="font-sans font-bold text-blue-700 group-hover:text-gray-500 transition-all duration-200">Know
+              more</a>
+            <i class="fa-solid fa-bars mt-1 ms-1"></i>
+          </div>
+        </div>
+
+        <!--box 2-->
+        <div
+          class=" p-10 bg-[url(./image/razorpay-instantsattelment.png)] w-full max-h-[300px] cursor-pointer bg-no-repeat hover:scale-105 transition-all duration-200 hover:bg-[url(./image/razorpay-instantsattelment.png)] border bg-white  ">
+          <i class="fa-solid fa-circle-xmark" style="color: #74C0FC; "></i>
+          <h3 class="font-sans font-bold text-lg  pt-4">UPI AutoPay</h3>
+          <p class="font-bold py-3 text-gray-500 leading-normal"> Simplyfy your recurring, international and team
+            expences with saving on every spend.Save up to 10Lacks to everymonth.</p>
+
+          <div class="flex flex-row items-center cursor-pointer group">
+            <a href=""
+              class="font-sans font-bold text-blue-700 group-hover:text-gray-500 transition-all duration-200">Know
+              more</a>
+            <i class="fa-solid fa-bars mt-1 ms-1"></i>
+          </div>
+        </div>
+
+        <!--box 3-->
+        <div
+          class=" p-10 bg-[url(./image/razorpay-instantsattelment.png)] w-full max-h-[300px] cursor-pointer bg-no-repeat hover:scale-105 transition-all duration-200 hover:bg-[url(./image/razorpay-instantsattelment.png)] border bg-white">
+          <i class="fa-solid fa-circle-xmark" style="color: #74C0FC; "></i>
+          <h3 class="font-sans font-bold text-lg  pt-4">Payment Button</h3>
+          <p class="font-bold py-3 text-gray-500 leading-normal"> Simplyfy your recurring, international and team
+            expences with saving on every spend.Save up to 10Lacks to everymonth.</p>
+
+          <div class="flex flex-row items-center cursor-pointer group">
+            <a href=""
+              class="font-sans font-bold text-blue-700 group-hover:text-gray-500 transition-all duration-200">Know
+              more</a>
+            <i class="fa-solid fa-bars mt-1 ms-1"></i>
+          </div>
+        </div>
+
+        <!--box 4-->
+        <div
+          class=" p-10 bg-[url(./image/razorpay-instantsattelment.png)] w-full max-h-[300px] cursor-pointer bg-no-repeat hover:scale-105 transition-all duration-200 hover:bg-[url(./image/razorpay-instantsattelment.png)] border bg-white ">
+          <i class="fa-solid fa-circle-xmark" style="color: #74C0FC; "></i>
+          <h3 class="font-sans font-bold text-lg  pt-4">QR Codes</h3>
+          <p class="font-bold py-3 text-gray-500 leading-normal"> Simplyfy your recurring, international and team
+            expences with saving on every spend.Save up to 10Lacks to everymonth.</p>
+
+          <div class="flex flex-row items-center cursor-pointer group">
+            <a href=""
+              class="font-sans font-bold text-blue-700 group-hover:text-gray-500 transition-all duration-200">Know
+              more</a>
+            <i class="fa-solid fa-bars mt-1 ms-1"></i>
+          </div>
+        </div>
+
+        <!--box 5-->
+        <div
+          class=" p-10 bg-[url(./image/razorpay-instantsattelment.png)] w-full max-h-[300px] cursor-pointer bg-no-repeat hover:scale-105 transition-all duration-200 hover:bg-[url(./image/razorpay-instantsattelment.png)] border bg-white ">
+          <i class="fa-solid fa-circle-xmark" style="color: #74C0FC; "></i>
+          <h3 class="font-sans font-bold text-lg  pt-4">Magic Checkout</h3>
+          <p class="font-bold py-3 text-gray-500 leading-normal"> Simplyfy your recurring, international and team
+            expences with saving on every spend.Save up to 10Lacks to everymonth.</p>
+
+          <div class="flex flex-row items-center cursor-pointer group">
+            <a href=""
+              class="font-sans font-bold text-blue-700 group-hover:text-gray-500 transition-all duration-200">Know
+              more</a>
+            <i class="fa-solid fa-bars mt-1 ms-1"></i>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <section id="e" class="mt-14 bg-blue-700 relative pb-44">
+
+
+
+
+    <div class="relative w-10/12 max-w-[1080px] mx-auto pt-4">
+      <h2 class="font-sans font-bold lg:text-2xl text-4xl text-center text-white pt-8">Features</h2>
+
+      <div class="w-6 h-1 bg-green-300 mx-auto mt-2"></div>
+
+      <p class="font-sans mx-auto mt-4 text-white max-w-[450px] ms-8 lg:ms-auto ">Empower your business with all the
+        right tools to accept online payments and provide the best customber exeperience.</p>
+
+
+
+
+      <!--grid-->
+
+      <div class="grid lg:grid-cols-4 grid-cols-1 gap-[3rem] pt-20 ">
+
+        <!--card1-->
+
+        <div class="lg:text-start text-center">
+          <i class="fa-solid fa-rocket " style="color: #f7f8f8f8; "></i>
+          <h3 class="text-white font-bold font-sans lg:text-xl text-2xl my-4">Instant Activation</h3>
+          <p class="font-serif text-white opacity-80 "> Get Activated and transact with in 2 minutes. Completly Online
+            onboarding with minimum</p>
+        </div>
+        <!--card2-->
+        <div class="lg:text-start text-center">
+          <i class="fa-solid fa-rocket" style="color:  #f7f8f8f8;"></i>
+          <h3 class="text-white font-bold font-sans  my-4 lg:text-xl text-2xl">Easy Integration</h3>
+          <p class="font-serif text-white opacity-80"> Get Activated and transact with in 2 minutes. Completly Online
+            onboarding with minimum</p>
+        </div>
+
+        <!--card3-->
+        <div class="lg:text-start text-center">
+          <i class="fa-solid fa-rocket" style="color:  #f7f8f8f8;"></i>
+          <h3 class="text-white font-bold font-sans  my-4 lg:text-xl text-2xl">API Driven</h3>
+          <p class="font-serif text-white opacity-80"> Get Activated and transact with in 2 minutes. Completly Online
+            onboarding with minimum</p>
+        </div>
+
+        <!--card4-->
+        <div class="lg:text-start text-center">
+          <i class="fa-solid fa-rocket" style="color:  #f7f8f8f8;"></i>
+          <h3 class="text-white font-bold font-sans  my-4 lg:text-xl text-2xl">100+ payment modes</h3>
+          <p class="font-serif text-white opacity-80"> Get Activated and transact with in 2 minutes. Completly Online
+            onboarding with minimum</p>
+        </div>
+
+        <!--card5-->
+        <div class="lg:text-start text-center">
+          <i class="fa-solid fa-rocket" style="color:  #f7f8f8f8;"></i>
+          <h3 class="text-white font-bold font-sans my-4 lg:text-xl text-2xl">Simple Pricing</h3>
+          <p class="font-serif text-white opacity-80"> Get Activated and transact with in 2 minutes. Completly Online
+            onboarding with minimum</p>
+        </div>
+
+        <!--card6-->
+        <div class="lg:text-start text-center">
+          <i class="fa-solid fa-rocket" style="color:  #f7f8f8f8;"></i>
+          <h3 class="text-white font-bold font-sans my-4 lg:text-xl text-2xl">Best in Industry Support</h3>
+          <p class="font-serif text-white opacity-80"> Get Activated and transact with in 2 minutes. </p>
+        </div>
+
+        <!--card7-->
+        <div class="lg:text-start text-center">
+          <i class="fa-solid fa-rocket" style="color:  #f7f8f8f8;"></i>
+          <h3 class="text-white font-bold font-sans lg:text-xl text-2xl my-4">Dashboard Reporting</h3>
+          <p class="font-serif text-white opacity-80"> Get Activated and transact with in 2 minutes. Completly Online
+            onboarding with minimum</p>
+        </div>
+        <!--card8-->
+        <div class="lg:text-start text-center">
+          <i class="fa-solid fa-rocket" style="color:  #f7f8f8f8;"></i>
+          <h3 class="text-white font-bold font-sans lg:text-xl text-2xl my-4">Secure</h3>
+          <p class="font-serif text-white opacity-80"> Get Activated and transact with in 2 minutes. Completly Online
+            onboarding with minimum</p>
+        </div>
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+  </section>
+
+
+  <section id="f" class="bg-[#f5f8fe] pt-20 pb-12  relative">
+
+    <div class="w-11/12 max-w-[1080px] mx-auto relative flex lg:flex-row flex-col ">
+      <!--left!-->
+      <div class="flex flex-col justify-center  lg:max-w-[calc(100%-500px)]">
+
+        <h2 class="font-sans font-bold lg:text-2xl text-3xl text-blue-700 ms-5 lg:ms-0 ">Join the 50,00,000+ business
+          using Razorpay</h2>
+        <div class="w-6 h-1 bg-green-600  my-4 mb-10 ms-14"></div>
+        <p class="font-sans opacity-80 lg:ms-0 ms-5 ">we make it easier for you to focus on building great products
+          while we work on simplyfying your payments Beacause one of us by joining by thousand of our happy users and
+          simplyfy the online payment experience for your customber </p>
+        <p class="font-sans mt-14 opacity-80 lg:ms-0 ms-5">focus on your business while we handle the complexities of
+          payment for you.</p>
+
+
+      </div>
+      <!--right!-->
+
+      <div class="h-[500px] lg:w-[500px] relative overflow-y-hidden mt-28">
+        <div style="background: linear-gradient(180deg,#f4f8ff,#fff0);" class="absolute w-full h-[150px] top-0 z-50">
+        </div>
+
+        <img src="./image/comanies-f772fc25.png" alt="" width="500px"
+          class="absolute  object-cover h-auto companiesList">
+
+        <div style="background: linear-gradient(180deg,#f4f8ff,#fff0);" class="absolute w-full h-[150px] top-0 z-50">
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="g" class="relative">
+
+    <div class="w-11/12 max-w-[1300px] mx-auto relative py-20">
+      <img src="./image/dotted image.png" alt=""
+        class="opacity-20 rounded-full absolute w-[200px] top-[5rem] left-[9rem] -z-10 lg:block hidden">
+      <h2 class="font-sans font-bold lg:text-2xl text-3xl text-blue-950 text-center"> Razorpay Clone <br>
+        This is not an official site of Razorpay
+
+      </h2>
+      <div class="w-6 h-1 bg-green-500 mx-auto my-4 "></div>
+
+
+      <!--left-->
+
+      <button
+        class="w-[70px] h-[70px] bg-[#f4f8ff] rounded-full absolute left-20 top-1/2 lg:flex justify-center items-center lg:block hidden  ">
+        <div
+          class="w-[50px] h-[50px] bg-[#f4f8ff] rounded-full absolute flex justify-center items-center mix-blend-multiply ">
+          <i class="fa-solid fa-circle-arrow-left" style="color: #8d8a7e;"></i></i>
+        </div>
+      </button>
+
+      <!--right-->
+
+      <button
+        class="w-[70px] h-[70px] bg-[#f4f8ff] rounded-full absolute right-20 top-1/2 lg:flex justify-center items-center lg:block hidden ">
+        <div
+          class="w-[50px] h-[50px] bg-[#f4f8ff] rounded-full absolute flex justify-center items-center mix-blend-multiply">
+          <i class="fa-solid fa-circle-arrow-right  " style="color: #8d8a7e;"></i>
+        </div>
+      </button>
+
+      <!--main content-->
+
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-10 lg:my-20 mt-10">
+
+        <!--left-->
+        <img src="./image/jay'spic.jfif" alt=""
+          class="rounded-3xl -mb-2 hover:scale-105 transition-all duration-200 lg:max-w-[250px] lg:max-h-[350px] lg:ms-44  max-w-[350px] max-h-[350px] lg:me-0 mr-0 ">
+
+        <!--right-->
+
+        <div class="max-w-[400px] text-center lg:text-left mt-6 lg:mt-0">
+          <p class="text-2xl font-light mb-3">Front-End Part of Razorpay</p>
+          <a href="#" class="text-gray-600 italic underline">Learn more</a>
+          <p class="font-bold text-2xl mt-4">Jay Rana</p>
+          <p class="font-medium">Developer</p>
+          <i class="fa-solid fa-user-tie text-purple-600 text-4xl mt-2"></i>
+        </div>
+
+
+      </div>
+      <div class="flex flex-row mx-auto space-x-3 justify-center mt-4">
+        <!--dot1-->
+        <div class="h-[10px] w-[10px] bg-gray-600 rounded-full"></div>
+
+        <div class="h-[10px] w-[10px] bg-blue-600 rounded-full"></div>
+
+        <div class="h-[10px] w-[10px] bg-gray-600 rounded-full"></div>
+
+        <div class="h-[10px] w-[10px] bg-gray-600 rounded-full"></div>
+
+        <div class="h-[10px] w-[10px] bg-gray-600 rounded-full"></div>
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+  <section id="h" class="bg-yellow-300 min-h-[510px] w-full h-auto py-10 relative">
+
+    <!-- Wrapper -->
+    <div
+      class="w-11/12 max-w-[1080px] mx-auto relative flex flex-col-reverse lg:flex-row items-center justify-between gap-10 pt-6 lg:pt-16">
+
+      <!-- Left Text Content -->
+      <div class="flex flex-col gap-5 mt-6 lg:mt-12 max-w-[600px] text-center lg:text-left">
+        <h2 class="font-sans font-bold text-2xl text-blue-800">
+          Supercharge your business with Razorpay
+        </h2>
+        <div class="w-6 h-1 bg-green-500 mx-auto lg:mx-0"></div>
+        <p class="font-sans">
+          Sign up now to experience the future of payments and offer
+          <br class="hidden lg:block">
+          your customers the best checkout experience.
+        </p>
+
+        <!-- Feature List -->
+        <ul class="flex flex-wrap gap-x-6 gap-y-3 justify-center lg:justify-start">
+          <li class="font-sans text-black flex items-center font-bold gap-2 pt-2">
+            <i class="fa-solid fa-check text-green-500 pt-1"></i>
+            <span>Quick onboarding</span>
+          </li>
+          <li class="font-sans text-black flex items-center font-bold gap-2 pt-2">
+            <i class="fa-solid fa-check text-green-500 pt-1"></i>
+            <span>Access to the entire product suite</span>
+          </li>
+          <li class="font-sans text-black flex items-center font-bold gap-2 pt-2">
+            <i class="fa-solid fa-check text-green-500 pt-1"></i>
+            <span>API access</span>
+          </li>
+          <li class="font-sans text-black flex items-center font-bold gap-2 pt-2">
+            <i class="fa-solid fa-check text-green-500 pt-1"></i>
+            <span>24x7 support</span>
+          </li>
+        </ul>
+
+        <!-- Button -->
+        <button
+          class="min-w-[32px] font-sans text-sm font-bold bg-white text-blue-700 border flex rounded-sm items-center hover:text-blue-950 transition-all duration-200 py-3 px-4 mx-auto lg:mx-auto ">
+          SIGN UP
+          <i class="fa-solid fa-arrow-right ms-2 mt-1"></i>
+        </button>
+      </div>
+
+      <!-- Right Image -->
+      <img src="./image/cartoon_boy-removebg-preview.png" alt="error" class="w-[280px] h-[280px] object-contain" />
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
